@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Tienda Ejemplo</h1>
+    </header>
+
+    <nav aria-label="Pantalla de checkout">
+      <ol>
+        <li>Carrito</li>
+        <li>Envío</li>
+        <li>Pago</li>
+      </ol>
+    </nav>
+
+    <section aria-labelledby="resumen-productos">
+      <h2 id="resumen-productos">Finalizar compra</h2>
+      <ul>
+        <li>Auriculares Orbit — 1 × 129,99 €</li>
+        <li>Funda de transporte — 1 × 19,99 €</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="direccion-envio">
+      <form>
+        <fieldset>
+          <legend>Dirección de envío</legend>
+          <label for="nombre">Nombre completo:</label><br />
+          <input type="text" id="nombre" name="nombre" required /><br />
+
+          <label for="direccion">Dirección:</label><br />
+          <input type="text" id="direccion" name="direccion" required /><br />
+
+          <label for="ciudad">Ciudad:</label><br />
+          <input type="text" id="ciudad" name="ciudad" required /><br />
+
+          <label for="cp">Código postal:</label><br />
+          <input type="text" id="cp" name="cp" required />
+        </fieldset>
+      </form>
+    </section>
+
+    <section aria-labelledby="metodo-envio">
+      <form>
+        <fieldset>
+          <legend>Método de envío</legend>
+          <label>
+            <input type="radio" name="envio" value="standard" required />
+            Estándar 3,99 €
+          </label>
+          <label
+            ><br />
+            <input type="radio" name="envio" value="express" />
+            Exprés 8,99 €
+          </label>
+        </fieldset>
+        <button type="submit">Continuar al pago</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="resumen-economico">
+      <h2 id="resumen-economico">Resumen económico</h2>
+      <dl>
+        <dt>Productos:</dt>
+        <dd>149,98 €</dd>
+        <dt>Envío:</dt>
+        <dd>3,99 €</dd>
+        <dt>Total:</dt>
+        <dd>153,97 €</dd>
+      </dl>
+    </section>
+
+    <footer>
+      <h2 id="ayuda">¿Necesitas ayuda?</h2>
+      <p><a href="#ayuda">Contacta con soporte</a></p>
+      <p><a href="#ayuda">Consulta condiciones de compra y devoluciones</a></p>
+      <p><a>Compra segura · Política de privacidad</a></p>
+    </footer>
+  </body>
+</html>
