@@ -1,1 +1,66 @@
-/* Escribe aquí tus estilos. */
+* {
+  box-sizing: border-box;
+  margin: 1;
+  padding: 1;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* Agrupados para alinear los 3 niveles a la vez */
+.site-header,
+nav,
+.nav-list {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.site-header {
+  padding: 1rem;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.cta {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 500px) {
+  .site-header,
+  nav,
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .site-header {
+    justify-content: space-between;
+  }
+
+  .cta {
+    width: auto;
+  }
+}
