@@ -83,7 +83,7 @@ button:hover {
   background-color: #006400a2;
 }
 
-button:focus {
+button:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(49, 84, 240, 0.5);
 }
