@@ -1,1 +1,76 @@
-/* Escribe aquí tus estilos. */
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.field {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+input:disabled {
+  background-color: #f0f0f0;
+  color: #888;
+  border: 1px solid #ccc;
+  cursor: not-allowed;
+}
+
+small:invalid {
+  display: block;
+  margin-top: 0.5rem;
+  color: #cc0707;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+input:user-invalid {
+  padding: 0.5rem;
+  border: 2px solid #d40f0f;
+}
+
+input:hover:not(:disabled),
+select:hover:not(:disabled) {
+  border-color: #0af802;
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid #e8eb25;
+  outline-offset: 2px;
+}
+
+input:user-invalid + small {
+  color: #8f1d14;
+}
