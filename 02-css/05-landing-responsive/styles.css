@@ -17,6 +17,7 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  background-color: var(--color-primary);
   color: var(--color-dark);
 }
 
@@ -145,5 +146,24 @@ a:focus-visible {
   .features,
   .plans {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #1a1a1a;
+    --color-secondary: #0f72e4;
+    --color-light: #010114;
+    --color-dark: #f5f5f5;
+    --color-border: #444444;
+  }
+
+  button,
+  .hero a,
+  .final-cta a,
+  .hero__visual {
+    background-color: var(--color-secondary);
+    color: var(--color-light);
   }
 }
