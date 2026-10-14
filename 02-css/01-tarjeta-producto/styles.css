@@ -43,7 +43,7 @@ img {
 
 .product-card__category {
   font-size: 2.5rem;
-  color: #333;
+  color: var(--color-text);
   margin-bottom: 0.5rem;
 }
 
@@ -60,7 +60,7 @@ p {
 
 .product-card__price {
   font-size: 2rem;
-  color: #333;
+  color: var(--color-text);
   font-weight: bold;
 }
 
