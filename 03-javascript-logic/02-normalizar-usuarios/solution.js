@@ -13,6 +13,7 @@ function formatName(name) {
   return finalName;
 }
 
+/* Versión original con filter y map:
 export function normalizeUsers(users) {
   const validUser = users.filter(function (user) {
     const correctEmail = user.email.trim();
@@ -34,30 +35,51 @@ export function normalizeUsers(users) {
   });
   return normalizedList;
 }
+*/
 
-/* Versión refactorizada con funciones flecha.
+/* Versión refactorizada con funciones flecha:
 export const normalizeUsers = (users) => {
-  // Se conservan solo los usuarios cuyo email no queda vacío al limpiarlo.
   const validUser = users.filter((user) => {
     const correctEmail = user.email.trim();
-    const hasValidEmail = correctEmail !== "";
-    return hasValidEmail;
+    return correctEmail !== "";
   });
 
-  // Se transforma cada usuario válido en un nuevo objeto normalizado.
   const normalizedList = validUser.map((user) => {
     const cleanFirstName = formatName(user.firstName);
     const cleanLastName = formatName(user.lastName);
-    const nameFullName = cleanFirstName + " " + cleanLastName;
-
-    const emailNoSpace = user.email.trim();
-    const cleanEmail = emailNoSpace.toLowerCase();
+    const fullName = cleanFirstName + " " + cleanLastName;
+    const cleanEmail = user.email.trim().toLowerCase();
 
     return {
-      fullName: nameFullName,
+      fullName: fullName,
       email: cleanEmail,
     };
   });
 
   return normalizedList;
-};*/
+};
+*/
+
+// Versión imperativa: recorre los usuarios y construye el resultado paso a paso.
+export function normalizeUsers(users) {
+  const normalizedList = [];
+
+  for (const user of users) {
+    const cleanEmail = user.email.trim().toLowerCase();
+
+    if (cleanEmail === "") {
+      continue;
+    }
+
+    const cleanFirstName = formatName(user.firstName);
+    const cleanLastName = formatName(user.lastName);
+    const fullName = cleanFirstName + " " + cleanLastName;
+
+    normalizedList.push({
+      fullName: fullName,
+      email: cleanEmail,
+    });
+  }
+
+  return normalizedList;
+}
