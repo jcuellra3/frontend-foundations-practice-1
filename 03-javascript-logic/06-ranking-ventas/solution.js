@@ -5,8 +5,8 @@ export function buildSalesRanking(sales, limit = 3) {
   //Se recorren todas las ventas
   for (const sale of sales) {
     //Se busca si el vendedor fue añadido anteriormente
-    const existingSeller = ranking.find(function (item) {
-      return item.seller === sale.seller;
+    const existingSeller = ranking.find(function (sellerInRanking) {
+      return sellerInRanking.seller === sale.seller;
     });
     //Se comprueba si se ha encontrado o no
     if (existingSeller) {
