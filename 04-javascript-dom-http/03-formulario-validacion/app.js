@@ -10,6 +10,11 @@ const emailError = document.getElementById("email-error");
 const passwordError = document.getElementById("password-error");
 const termsError = document.getElementById("terms-error");
 
+nameInput.setAttribute("aria-describedby", "name-error");
+emailInput.setAttribute("aria-describedby", "email-error");
+passwordInput.setAttribute("aria-describedby", "password-error");
+termsInput.setAttribute("aria-describedby", "terms-error");
+
 //Formulario completo.
 const form = document.getElementById("form");
 
@@ -75,7 +80,7 @@ termsInput.addEventListener("change", () => {
 
 form.addEventListener("submit", (e) => {
   //Se detiene el envío automático.
-  e.preventDefault();
+
   envioIntentado = true;
 
   //Se revisan los 4 campos y se guarda si true o false.
