@@ -48,7 +48,8 @@ function validarPassword() {
   const passwordValida = /^(?=.*\d).{8,}$/.test(passwordInput.value);
 
   if (!passwordValida) {
-    passwordError.textContent = "Usa al menos 8 caracteres e incluye un número.";
+    passwordError.textContent =
+      "Usa al menos 8 caracteres e incluye un número.";
     return false;
   } else {
     passwordError.textContent = "";
@@ -79,7 +80,7 @@ termsInput.addEventListener("change", () => {
 
 form.addEventListener("submit", (e) => {
   //Se detiene el envío automático.
-
+  e.preventDefault();
   envioIntentado = true;
 
   //Se revisan los 4 campos y se guarda si true o false.
