@@ -45,11 +45,10 @@ function validarEmail() {
 }
 
 function validarPassword() {
-  const texto = passwordInput.value;
-  const tieneNumero = /\d/.test(texto);
+  const passwordValida = /^(?=.*\d).{8,}$/.test(passwordInput.value);
 
-  if (texto.length < 8 || !tieneNumero) {
-    passwordError.textContent = "Usa al menos 8 caracteres.";
+  if (!passwordValida) {
+    passwordError.textContent = "Usa al menos 8 caracteres e incluye un número.";
     return false;
   } else {
     passwordError.textContent = "";
