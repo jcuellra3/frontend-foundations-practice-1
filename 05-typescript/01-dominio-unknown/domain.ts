@@ -4,7 +4,6 @@ export interface Collection {
   category: 'learning' | 'work' | 'personal';
   note?: string;
 }
-
 export function isCollection(value: unknown): value is Collection {
   //Se comprueba que el dato sea un objeto real; no null o array.
   if (typeof value !== 'object' || value === null || Array.isArray(value)) {
